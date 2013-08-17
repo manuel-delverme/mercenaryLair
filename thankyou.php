@@ -1,4 +1,23 @@
-<?php echo '<pre>'; print_r(get_defined_vars()); echo '</pre>'; ?>
+<?php
+$filename = 'emails.txt';
+$email = $_POST['email']."\n";
+
+if (is_writable($filename)) {
+  if (!$handle = fopen($filename, 'a')) {
+    echo "Cannot open file ($filename)";
+    exit;
+  }
+  if (fwrite($handle, $email) === FALSE) {
+    echo "Cannot write to file ($filename)";
+    exit;
+  }
+  echo "Success, wrote ($email) to file ($filename)";
+  fclose($handle);
+} else {
+  echo "The file $filename is not writable";
+}
+?>
+
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
