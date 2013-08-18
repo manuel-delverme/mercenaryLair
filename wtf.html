@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <?php include("functions.php")?>
     <meta charset="utf-8">
     <title>rentAPro</title>
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="wtf.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery/jquery-2.0.3.min.js"></script> 
+    <script type="text/javascript" src="/js/jquery/jquery.tablesorter.js"></script> 
+    <script >
+      $(document).ready(function() 
+      { 
+        $("#offers").tablesorter(); 
+      } 
+      ); 
+    </script>
   </head>
   <body>
     <div class="navbar navbar-fixed-top">
@@ -20,68 +31,57 @@
         </div>
       </div>
     </div>
-    <!DOCTYPE html> 
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>type</th>
-              <th>serviceName</th>
-              <th>serviceDuration</th>
-              <th>bid</th>
-              <th>buyOut</th>
-              <th>feedback</th>
-              <th>userName</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td>ServiceName</td>
-              <td>ServiceDuration</td>
-              <td>bid</td>
-              <td>buyOut</td>
-              <td>Feedback</td>
-              <td>UserName</td>
-            </tr>
-            <tr>
-              <td>WTB</td>
-              <td>boosting</td>
-              <td>BronzeV-Silver II </td>
-              <td>50€</td>
-              <td>80€</td>
-              <td>90%</td>
-              <td>silverfox</td>
-            </tr>
-            <tr>
-              <td>WTB</td>
-              <td>boosting</td>
-              <td>12 Victories</td>
-              <td>90€</td>
-              <td>100€</td>
-              <td>99%</td>
-              <td>xxSenxx</td>
-            </tr>
-            <tr>
-              <td>WTB</td>
-              <td>3v3 Plat team</td>
-              <td>until end of season</td>
-              <td>20€</td>
-              <td>30€</td>
-              <td>10%</td>
-              <td>Sulfukkio</td>
-            </tr>
-            <tr>
-              <td>WTS</td>
-              <td>coaching</td>
-              <td>20 games</td>
-              <td>20€</td>
-              <td>30€</td>
-              <td>92%</td>
-              <td>Sulfurion</td>
-            </tr>
-          </tbody>
-        </table>
-      </body>
-    </html>
+
+    <table id="offers" class="table table-striped tablesorter">
+      <thead>
+        <tr>
+          <th>type</th>
+          <th>serviceName</th>
+          <th>serviceDuration</th>
+          <th class="{sorter: 'currency'}">bid</th>
+          <th class="{sorter: 'currency'}">buyOut</th>
+          <th>feedback</th>
+          <th>userName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>WTB</td>
+          <td>boosting</td>
+          <td>BronzeV-Silver II </td>
+          <td>50€</td>
+          <td>80€</td>
+          <td>90%</td>
+          <td>silverfox</td>
+        </tr>
+        <tr>
+          <td>WTB</td>
+          <td>boosting</td>
+          <td>12 Victories</td>
+          <td>90€</td>
+          <td>100€</td>
+          <td>99%</td>
+          <td>xxSenxx</td>
+        </tr>
+        <tr>
+          <td>WTB</td>
+          <td>3v3 Plat team</td>
+          <td>until end of season</td>
+          <td>20€</td>
+          <td>30€</td>
+          <td>10%</td>
+          <td>Sulfukkio</td>
+        </tr>
+        <tr>
+          <td>WTS</td>
+          <td>coaching</td>
+          <td>20 games</td>
+          <td>20€</td>
+          <td>30€</td>
+          <td>92%</td>
+          <td>Sulfurion</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
