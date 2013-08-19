@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>rentAPro</title>
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="wtf.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery/jquery-2.0.3.min.js"></script> 
+    <script type="text/javascript" src="/js/jquery/jquery.tablesorter.js"></script> 
+    <script >
+      $(document).ready(function() 
+      { 
+        $("#offers").tablesorter(); 
+      } 
+      ); 
+    </script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <ul class="nav">
+            <li class="active">
+            <a class="brand" href="index.html">rentAPro</a>
+            </li>
+            <li><a href="wtb.html">WTB</a></li>
+            <li><a href="wts.html">WTS</a></li>
+            <li><a href="signin/index.html">Account</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </ul>
+  {% if services_list %}
+  <table id="offers" class="table table-striped tablesorter">
+    <thead>
+      <tr>
+        <th>type</th>
+        <th>serviceName</th>
+        <th>serviceDuration</th>
+        <th class="{sorter: 'currency'}">bid</th>
+        <th class="{sorter: 'currency'}">buyOut</th>
+        <th>feedback</th>
+        <th>userName</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for service in services_list %}
+      <tr>
+        <td>WTB</td>
+        <td>boosting</td>
+        <td>BronzeV-Silver II </td>
+        <td>50€</td>
+        <td>80€</td>
+        <td>90%</td>
+        <td>silverfox</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No polls are available.</p>
+  {% endif %}
+</body>
+</html>
