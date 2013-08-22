@@ -13,7 +13,7 @@ class Service(models.Model):
  
   def __unicode__(self):
       return self.name
-  serviceType = models.IntegerField()
+  serviceType = models.CharField(max_length=3)
   name = models.CharField(max_length=200)
   duration = models.CharField(max_length=200)
   bid = models.FloatField()
