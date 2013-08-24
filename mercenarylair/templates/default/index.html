@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}TITLE{% endblock %}</title>
+    <link href="http://mercenarylair.tk/static/css/bootstrap.css" rel="stylesheet">
+    <link href="http://mercenarylair.tk/wtf.css" rel="stylesheet">
+    <script type="text/javascript" src="http://mercenarylair.tk/static/jquery-latest.js"></script> 
+    <script type="text/javascript" src="http://mercenarylair.tk/static/jquery.tablesorter.min.js"></script> 
+    <script >
+      $(document).ready(function() 
+      { 
+        $("#offers").tablesorter(); 
+      } 
+      ); 
+    </script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <ul class="nav">
+            <li class="active">
+            <a class="brand" href="/display.php/">Mercenary Lair</a>
+            </li>
+            <li><a href="/display.php/WTB/">WTB</a></li>
+            <li><a href="/display.php/WTS/">WTS</a></li>
+            <li><a href="/post/">Post Auction</a></li>
+            <li><a href="/account/">Account</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ul>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

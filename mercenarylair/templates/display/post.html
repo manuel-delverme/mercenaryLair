@@ -1,0 +1,91 @@
+{% extends "default/index.html" %}
+{% block title %}display title{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<form  style="display:block;text-align:center;" method="post" class="uniForm">
+
+
+
+
+
+  <div class="row-fluid">
+    <form class="form-horizontal">
+        {% csrf_token %}
+      <fieldset>
+        <div id="legend">
+          <legend class="">Posting offer</legend>
+        </div>
+
+        <!-- name -->
+        <div class="control-group">
+          <label class="control-label"  for="Description">Description</label>
+          <div class="controls">
+            <textarea rows="3" id="" name="Description" placeholder="3 poros">
+            </textarea>
+          </div>
+        </div>
+
+        <!-- serviceType -->
+        <div class="control-group">
+          <label class="control-label" for="password">Offer type</label>
+          <div class="controls">
+            <select class="span1" name="serviceType" id="seserviceType">
+              <option></option>
+              <option value="WTB">WTB</option>
+              <option value="WTS">WTS</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- duration -->
+        <div class="control-group">
+          <label class="control-label" for="duration">service duration</label>
+          <div class="controls">
+            <input type="text" id="duration" name="duration" placeholder="10 hours, 1 day, until the end of season" class="input-xlarge">
+          </div>
+        </div>
+
+        <!-- bid -->
+        <div class="control-group">
+          <label class="control-label" for="email">bid</label>
+          <div class="controls">
+            <input type="text" id="bid" name="bid" placeholder="" class="input-small">
+          </div>
+        </div>
+
+        <!-- buyOut -->
+        <div class="control-group">
+          <label class="control-label" for="buyOut">buyOut</label>
+          <div class="controls">
+            <input type="text" id="buyOut" name="buyOut" placeholder="" class="input-small">
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="control-group">
+          <div class="controls">
+            <button class="btn btn-success">Post Now</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  {{ my_formset|crispy }}
+</form>
+{% endblock %}
+</body>
+</html>

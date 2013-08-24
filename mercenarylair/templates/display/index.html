@@ -1,0 +1,40 @@
+{% extends "default/index.html" %}
+{% block title %}display title{% endblock %}
+{% block content %}
+  {% if services_list %}
+    <table id="offers" class="table table-striped tablesorter">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Duration</th>
+          <th class="{sorter: 'currency'}">Bid</th>
+          <th class="{sorter: 'currency'}">Buyout</th>
+          <th>Time left</th>
+          <th>Feedback</th>
+          <th>username</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for service in services_list%}
+          {% if service.serviceType == type_filter or type_filter == "" %} 
+            <tr>
+              <td>{{ service.serviceType }}</td>
+              <td><a href="/detail.php/{{ service.id }}">{{ service.name }}</a></td>
+              <td>{{ service.duration }}</td>
+              <td>{{ service.bid }}</td>
+              <td>{{ service.buyOut }}</td>
+              <td>{{ service.ending_date|timeuntil }}</td>
+              <td>NYI</td>
+              <td>{{ service.user }}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No offers are available.</p>
+  {% endif %}
+{% endblock %}
+</body>
+</html>
